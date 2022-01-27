@@ -33,15 +33,7 @@
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 
-  /*fetch("https://localhost:44303/api/nodes")
-                          .then(response=>response.json())
-                          .then(data=>{
-                                  links=responce.data;
-                          }).catch(error=>{console.log(error)});*/
-
- 
-  const createGraph = function (graphdata) {
-    d3.json(graphdata, function (error, graph) {
+  d3.json("https://localhost:44303/api/nodes", function (error, graph) {
       if (error) throw error;
 
       var link = svg.append("g")
@@ -99,19 +91,8 @@
           })
       }
     });
-  }
+  
 
-  const request = async () => {
-      const response =await fetch("https://localhost:44303/api/nodes")
-                          .then(response=>response.json())
-                          .then(data=>{
-                            console.log(data);
-                            createGraph(data);
-                          }).catch(error=>{console.log(error)});
-      return response;
-  };
-
-  request();
 
 
  /* axios.get("https://localhost:44303/api/nodes")

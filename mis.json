@@ -1,0 +1,19 @@
+{
+    "nodes": [
+        {
+            "id": "n1",
+            "group": 1
+        },
+        {
+            "id": "n2",
+            "group": 1
+        }
+    ],
+    "links": [
+        {
+            "source": "n1",
+            "target": "n2",
+            "value": 1
+        }
+    ]
+}
